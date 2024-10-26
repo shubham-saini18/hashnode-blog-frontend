@@ -35,7 +35,7 @@ export const PersonalHeader = () => {
 						</DropdownMenu.Trigger>
 						<DropdownMenu.Portal>
 							<DropdownMenu.Content
-								className="flex flex-col items-stretch gap-1 rounded-lg border bg-white text-xs font-semibold uppercase tracking-tight text-neutral-600 shadow-xl dark:border-neutral-800 dark:bg-neutral-900  dark:text-neutral-300"
+								className="flex flex-col items-stretch gap-1 rounded-lg border bg-white text-xs font-semibold uppercase tracking-tight text-neutral-600 shadow-xl dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-300"
 								sideOffset={5}
 								align="end"
 							>
@@ -85,12 +85,6 @@ export const PersonalHeader = () => {
 			</div>
 			<div className="col-span-full flex flex-row items-center justify-between gap-4 md:col-span-1 md:justify-end">
 				<nav>{navList}</nav>
-				{/* <Button
-          label=""
-          type="outline"
-          className="!p-2"
-          icon={<NewsletterPlusSVG className="w-5 h-5 fill-current" />}
-        /> */}
 			</div>
 		</header>
 	);

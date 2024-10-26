@@ -2,6 +2,96 @@
 @tailwind components;
 @tailwind utilities;
 
-.hashnode-content-style{
-    @apply prose break-words text-slate-950 first:prose-p:mt-0 prose-img:max-w-full prose-p:leading-snug prose-a:underline hover:prose-a:bg-primary-50 dark:hover:prose-a:text-primary-500 dark:hover:prose-a:bg-neutral-800 dark:text-neutral-50 prose-blockquote:leading-snug prose-a:leading-snug prose-figure:leading-snug prose-figcaption:leading-snug prose-pre:leading-snug prose-li:leading-snug prose-ul:leading-snug prose-ol:leading-snug prose-th:leading-snug prose-td:leading-snug lg:prose-xl dark:prose-invert dark:prose-pre:bg-neutral-900 first:prose-h1:mt-0 first:prose-h2:mt-0 first:prose-h3:mt-0 first:prose-h4:mt-0 first:prose-h5:mt-0;
+/* Custom global styles */
+body {
+    @apply bg-white text-gray-800;
+    font-family: 'Inter', sans-serif; /* Updated to a widely used modern font */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transitions for theme switch */
+}
+
+/* Hashnode content styles */
+.hashnode-content-style {
+    @apply prose break-words text-slate-900 
+        first:prose-p:mt-0 
+        prose-img:max-w-full 
+        prose-p:leading-relaxed 
+        prose-a:underline 
+        hover:prose-a:bg-blue-100 
+        dark:hover:prose-a:text-blue-400 
+        dark:hover:prose-a:bg-gray-800 
+        dark:text-gray-100 
+        prose-blockquote:leading-relaxed 
+        prose-a:leading-relaxed 
+        prose-figure:leading-relaxed 
+        prose-figcaption:leading-relaxed 
+        prose-pre:leading-relaxed 
+        prose-li:leading-relaxed 
+        prose-ul:leading-relaxed 
+        prose-ol:leading-relaxed 
+        prose-th:leading-relaxed 
+        prose-td:leading-relaxed 
+        lg:prose-lg 
+        dark:prose-invert 
+        dark:prose-pre:bg-gray-900 
+        first:prose-h1:mt-0 
+        first:prose-h2:mt-0 
+        first:prose-h3:mt-0 
+        first:prose-h4:mt-0 
+        first:prose-h5:mt-0;
+}
+
+/* Fade-in animation */
+.fade-in {
+    @apply opacity-0; /* Initial opacity */
+    animation: fadeIn 0.7s ease-out forwards; /* Animation duration and easing */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1; /* Final opacity */
+    }
+}
+
+/* Button styling */
+.btn {
+    @apply px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg shadow-md transition-all duration-300 ease-in-out transform hover:bg-blue-700 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50;
+}
+
+/* Animated gradient background */
+.gradient-bg {
+    background: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
+    @apply bg-clip-text text-transparent animate-gradient;
+}
+
+/* Gradient animation */
+@keyframes gradientShift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.animate-gradient {
+    background-size: 200% 200%;
+    animation: gradientShift 5s ease infinite;
+}
+
+/* Additional hover effects */
+.card-hover:hover {
+    @apply transform scale-105 shadow-lg transition-transform duration-300 ease-out;
+}
+
+.card-hover {
+    @apply rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 p-4 transition-all duration-300;
+}
+
+/* Dark mode utility classes */
+.dark-mode-bg {
+    @apply bg-gray-900 text-white;
+}
+
+.light-mode-bg {
+    @apply bg-white text-gray-800;
 }

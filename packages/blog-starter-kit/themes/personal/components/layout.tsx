@@ -1,22 +1,28 @@
-import { Analytics } from './analytics';
-import { Integrations } from './integrations';
-import { Meta } from './meta';
-import { Scripts } from './scripts';
+// components/layout.tsx
+import React from 'react';
+import { useThemeContext } from './contexts/themeContext';
 
-type Props = {
-	children: React.ReactNode;
-};
+export const Layout = ({ children }: { children: React.ReactNode }) => {
+    const { isDarkMode, toggleTheme } = useThemeContext();
 
-export const Layout = ({ children }: Props) => {
-	return (
-		<>
-			<Meta />
-			<Scripts />
-			<div className="min-h-screen bg-white dark:bg-neutral-950">
-				<main>{children}</main>
-			</div>
-			<Analytics />
-			<Integrations />
-		</>
-	);
+    return (
+        <div className={`min-h-screen flex flex-col ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-white text-black'} transition-colors duration-300`}>
+            <header className="w-full py-4 px-8 bg-opacity-70 backdrop-blur-md shadow-md sticky top-0 z-10 flex justify-between items-center">
+                <h1 className="text-2xl font-bold">My Blog</h1>
+                <button
+                    onClick={toggleTheme}
+                    className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 transition-transform transform hover:scale-110"
+                    aria-label="Toggle dark mode"
+                >
+                    {isDarkMode ? '🌙' : '☀️'}
+                </button>
+            </header>
+            <main className="flex-grow container mx-auto py-8 px-4">
+                {children}
+            </main>
+            <footer className="w-full py-4 text-center text-sm border-t border-gray-200 dark:border-gray-700">
+                © {new Date().getFullYear()} My Blog. All rights reserved.
+            </footer>
+        </div>
+    );
 };

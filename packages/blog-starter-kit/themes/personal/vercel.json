@@ -1,3 +1,13 @@
 {
-    "framework": "nextjs"
+  "framework": "nextjs",
+  "build": {
+    "env": {
+      "SKIP_ESLINT": "true" // Set this to true to skip ESLint during build
+    },
+    "outputDirectory": "out" // Optional: specify your output directory if needed
+  },
+  "ignore": [
+    "ignored-file.js", // Optional: add any files or directories to ignore
+    "ignored-directory/*" // Optional: add any files or directories to ignore
+  ]
 }

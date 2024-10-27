@@ -6,9 +6,5 @@
       "SKIP_ESLINT": "true"
     },
     "outputDirectory": "out"
-  },
-  "ignore": [
-    "ignored-file.js",
-    "ignored-directory/*"
-  ]
+  }
 }
